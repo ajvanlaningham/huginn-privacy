@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Privacy policy for Huginn, a self-hosted single-user personal automation application.">
+  <meta name="robots" content="index, follow">
+  <title>Privacy Policy &mdash; Huginn</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
+      font-size: 17px;
+      line-height: 1.6;
+      color: #1a1a1a;
+      background: #f7f7f8;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: #0b5fff; }
+    a:hover, a:focus { text-decoration: underline; }
+    .page {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 3rem;
+    }
+    header.site-header {
+      border-bottom: 1px solid #e3e3e8;
+      padding-bottom: 1rem;
+      margin-bottom: 2rem;
+    }
+    header.site-header h1 {
+      font-size: 2rem;
+      margin: 0 0 0.25rem;
+      line-height: 1.2;
+    }
+    header.site-header p.subtitle {
+      margin: 0;
+      color: #555;
+      font-size: 1rem;
+    }
+    .effective {
+      display: inline-block;
+      margin-top: 0.75rem;
+      padding: 0.25rem 0.6rem;
+      background: #eef2ff;
+      color: #1f2a6b;
+      border-radius: 4px;
+      font-size: 0.9rem;
+    }
+    main section {
+      background: #ffffff;
+      border: 1px solid #e3e3e8;
+      border-radius: 8px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1rem;
+    }
+    main h2 {
+      font-size: 1.25rem;
+      margin: 0 0 0.75rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid #ececf1;
+    }
+    main h3 {
+      font-size: 1.05rem;
+      margin: 1rem 0 0.4rem;
+    }
+    main p { margin: 0.5rem 0; }
+    main ul { padding-left: 1.25rem; margin: 0.5rem 0; }
+    main li { margin: 0.25rem 0; }
+    address.contact {
+      font-style: normal;
+      line-height: 1.7;
+    }
+    footer.site-footer {
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid #e3e3e8;
+      font-size: 0.9rem;
+      color: #666;
+      text-align: center;
+    }
+    @media (max-width: 480px) {
+      body { font-size: 16px; }
+      .page { padding: 1.25rem 1rem 2rem; }
+      header.site-header h1 { font-size: 1.6rem; }
+      main section { padding: 1rem 1.1rem; border-radius: 6px; }
+    }
+    @media (prefers-color-scheme: dark) {
+      body { background: #121216; color: #e8e8ea; }
+      header.site-header, footer.site-footer { border-color: #2a2a31; }
+      header.site-header p.subtitle { color: #a8a8b0; }
+      main section { background: #1b1b22; border-color: #2a2a31; }
+      main h2 { border-color: #2a2a31; }
+      .effective { background: #1f2a6b; color: #dbe3ff; }
+      a { color: #8ab4ff; }
+      footer.site-footer { color: #a8a8b0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="site-header">
+      <h1>Privacy Policy</h1>
+      <p class="subtitle">Huginn &mdash; a self-hosted, single-user personal automation application</p>
+      <p class="effective"><strong>Effective date:</strong> <time datetime="2026-11-05">November 5, 2026</time></p>
+    </header>
+
+    <main>
+      <section aria-labelledby="overview">
+        <h2 id="overview">Overview and Purpose</h2>
+        <p>
+          Huginn is a self-hosted personal automation application operated by a single user on
+          private homelab infrastructure. This privacy policy explains how Huginn handles
+          information when it connects to third-party services (such as Google) on behalf of
+          its sole operator.
+        </p>
+        <p>
+          Huginn is <strong>not a multi-tenant service</strong>. It is not offered to the
+          public, has no user accounts for anyone other than its owner, and does not process
+          data belonging to any other person or organization.
+        </p>
+      </section>
+
+      <section aria-labelledby="scope">
+        <h2 id="scope">Scope</h2>
+        <p>
+          This policy applies to the Huginn instance operated by the owner identified in the
+          <a href="#contact">Contact</a> section below. It covers OAuth tokens and any data
+          retrieved from authorized third-party APIs for the purpose of running personal
+          automations.
+        </p>
+      </section>
+
+      <section aria-labelledby="information-we-collect">
+        <h2 id="information-we-collect">Information We Collect</h2>
+        <p>Huginn only handles data that is necessary for its owner's personal automations:</p>
+        <ul>
+          <li><strong>OAuth access and refresh tokens</strong> issued by third-party providers (e.g. Google) after the owner grants consent.</li>
+          <li><strong>API responses</strong> retrieved using those tokens, limited to the scopes the owner has approved.</li>
+        </ul>
+        <p>
+          Huginn <strong>does not collect data from any other person</strong>. No visitor to
+          this privacy policy page is tracked, profiled, or asked to provide personal
+          information.
+        </p>
+      </section>
+
+      <section aria-labelledby="how-we-use">
+        <h2 id="how-we-use">How Information Is Used</h2>
+        <p>
+          Information is used solely to execute the owner's own automations &mdash; for
+          example, reading messages, scheduling tasks, or moving files between services that
+          the owner personally uses. Data is never processed on behalf of anyone else.
+        </p>
+      </section>
+
+      <section aria-labelledby="sharing">
+        <h2 id="sharing">Data Sharing and Selling</h2>
+        <p>
+          <strong>No data is sold, rented, traded, or shared with any third party.</strong>
+          There are no advertisers, analytics providers, data brokers, or marketing partners
+          involved. Information remains between the owner's self-hosted Huginn instance and
+          the provider that issued the token.
+        </p>
+      </section>
+
+      <section aria-labelledby="storage">
+        <h2 id="storage">Data Storage and Security</h2>
+        <p>
+          OAuth tokens and any cached API data are stored locally on the owner's private
+          homelab infrastructure. There is no cloud database, no hosted backend, and no
+          managed service in front of Huginn.
+        </p>
+        <h3>Security measures</h3>
+        <ul>
+          <li>Tokens are kept on hardware physically controlled by the owner.</li>
+          <li>Network access to Huginn is restricted to the owner's private network.</li>
+          <li>Secrets are not committed to source control and are not transmitted to external systems.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="retention">
+        <h2 id="retention">Data Retention and Deletion</h2>
+        <p>
+          Tokens are retained only as long as they are useful for the owner's automations and
+          can be revoked at any time through the issuing provider's account settings (for
+          Google data, via
+          <a href="https://myaccount.google.com/permissions" rel="noopener">Google Account
+          permissions</a>). Revoking access immediately invalidates the token on Huginn's
+          side.
+        </p>
+      </section>
+
+      <section aria-labelledby="google">
+        <h2 id="google">Use of Google User Data</h2>
+        <p>
+          Huginn's use and transfer of information received from Google APIs will adhere to
+          the
+          <a href="https://developers.google.com/terms/api-services-user-data-policy" rel="noopener">Google
+          API Services User Data Policy</a>, including the Limited Use requirements. Data
+          obtained from Google APIs is used only to provide the owner's personal automations
+          and is never transferred to others, used for advertising, or read by humans except
+          as needed for security, debugging, or when the owner explicitly chooses to view it.
+        </p>
+      </section>
+
+      <section aria-labelledby="children">
+        <h2 id="children">Children's Privacy</h2>
+        <p>
+          Huginn is a single-user personal tool and is not directed to children. No data
+          about children is knowingly collected or processed.
+        </p>
+      </section>
+
+      <section aria-labelledby="changes">
+        <h2 id="changes">Changes to This Policy</h2>
+        <p>
+          If this policy changes, the updated version will be published at the same URL and
+          the effective date at the top of the page will be revised. There is no mailing list
+          or notification system; the published page is the single source of truth.
+        </p>
+      </section>
+
+      <section aria-labelledby="contact">
+        <h2 id="contact">Contact</h2>
+        <p>Questions about this policy can be directed to the owner:</p>
+        <address class="contact">
+          Andrew Van Laningham<br>
+          Email: <a href="mailto:ajvanlaningham@gmail.com">ajvanlaningham@gmail.com</a>
+        </address>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; <time datetime="2026">2026</time> Andrew Van Laningham. Huginn is a personal, non-commercial project.</p>
+    </footer>
+  </div>
+</body>
+</html>
