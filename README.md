@@ -25,4 +25,4 @@ the `<header>`, and commit. There is no build step.
 
 ## Contact
 
-Andrew Van Laningham &mdash; ajvanlaningham@gmail.com
+Alex VanLaningham &mdash; ajvanlaningham@gmail.com

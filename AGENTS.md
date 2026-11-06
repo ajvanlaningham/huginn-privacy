@@ -5,4 +5,4 @@
 - **Styling convention:** all CSS lives inline in `<style>` inside `index.html`. Do not add `<link>` tags, external stylesheets, JS, fonts, or analytics &mdash; the file must stay self-contained.
 - **Keep it semantic:** `<header>`, `<main>`, `<section>` with `aria-labelledby`, `<address>`, `<footer>`. Google's consent screen validator looks for recognizable privacy-policy sections (purpose, data collected, use, sharing, retention, contact).
 - **Effective date:** when editing policy content, update the `<time datetime="...">` inside the `.effective` block at the top of `index.html`.
-- **Owner contact:** Andrew Van Laningham, ajvanlaningham@gmail.com &mdash; this is the authoritative contact string; update everywhere if it changes.
+- **Owner contact:** Alex VanLaningham, ajvanlaningham@gmail.com &mdash; this is the authoritative contact string; update everywhere if it changes.

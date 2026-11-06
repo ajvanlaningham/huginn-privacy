@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Privacy policy for Huginn, a self-hosted single-user personal automation application.">
+  <meta name="description" content="Privacy policy for Huginn, a self-hosted single-user personal AI assistant.">
   <meta name="robots" content="index, follow">
   <title>Privacy Policy &mdash; Huginn</title>
   <style>
@@ -103,23 +103,22 @@
   <div class="page">
     <header class="site-header">
       <h1>Privacy Policy</h1>
-      <p class="subtitle">Huginn &mdash; a self-hosted, single-user personal automation application</p>
-      <p class="effective"><strong>Effective date:</strong> <time datetime="2026-11-05">November 5, 2026</time></p>
+      <p class="subtitle">Huginn &mdash; a self-hosted, single-user personal AI assistant</p>
+      <p class="effective"><strong>Effective date:</strong> <time datetime="2026-11-06">November 6, 2026</time></p>
     </header>
 
     <main>
       <section aria-labelledby="overview">
         <h2 id="overview">Overview and Purpose</h2>
         <p>
-          Huginn is a self-hosted personal automation application operated by a single user on
-          private homelab infrastructure. This privacy policy explains how Huginn handles
-          information when it connects to third-party services (such as Google) on behalf of
-          its sole operator.
+          Huginn is a self-hosted personal AI assistant operated by a single user on private
+          homelab infrastructure. This privacy policy explains how Huginn handles information
+          when it connects to third-party services (such as Google) on behalf of its sole
+          operator.
         </p>
         <p>
-          Huginn is <strong>not a multi-tenant service</strong>. It is not offered to the
-          public, has no user accounts for anyone other than its owner, and does not process
-          data belonging to any other person or organization.
+          Huginn is <strong>not a multi-tenant service</strong>. It is not offered to the public
+          and has no user accounts for anyone other than its owner.
         </p>
       </section>
 
@@ -138,79 +137,104 @@
         <p>Huginn only handles data that is necessary for its owner's personal automations:</p>
         <ul>
           <li><strong>OAuth access and refresh tokens</strong> issued by third-party providers (e.g. Google) after the owner grants consent.</li>
-          <li><strong>API responses</strong> retrieved using those tokens, limited to the scopes the owner has approved.</li>
+          <li><strong>Google Calendar data</strong>, such as event titles, times, locations and descriptions, and the list of the owner's calendars. Huginn requests the <code>calendar.readonly</code>, <code>calendar.events</code> and <code>calendar.calendarlist.readonly</code> scopes.</li>
+          <li><strong>Gmail data</strong>, such as message contents and metadata, only once the owner enables it. Gmail access is planned and not enabled as of the effective date above. This policy will list its scopes before it is.</li>
+          <li><strong>Conversations and assistant memory</strong>, including notes Huginn keeps from the owner's requests, which may draw on the data above.</li>
         </ul>
         <p>
-          Huginn <strong>does not collect data from any other person</strong>. No visitor to
-          this privacy policy page is tracked, profiled, or asked to provide personal
-          information.
+          Huginn collects nothing directly from anyone but its owner. However, calendar events and
+          email can contain information about other people, such as names, email addresses and the
+          contents of their messages. Huginn handles that information only as part of the owner's
+          own account data. No visitor to this privacy policy page is tracked, profiled, or asked
+          to provide personal information.
         </p>
       </section>
 
       <section aria-labelledby="how-we-use">
         <h2 id="how-we-use">How Information Is Used</h2>
         <p>
-          Information is used solely to execute the owner's own automations &mdash; for
-          example, reading messages, scheduling tasks, or moving files between services that
-          the owner personally uses. Data is never processed on behalf of anyone else.
+          Information is used solely to carry out the owner's own requests and automations, for
+          example answering questions about the owner's schedule, flagging conflicts, and creating
+          or changing events. Data is never processed on behalf of anyone else.
         </p>
       </section>
 
       <section aria-labelledby="sharing">
         <h2 id="sharing">Data Sharing and Selling</h2>
         <p>
-          <strong>No data is sold, rented, traded, or shared with any third party.</strong>
+          <strong>No data is sold, rented, or traded, and none is used for advertising.</strong>
           There are no advertisers, analytics providers, data brokers, or marketing partners
-          involved. Information remains between the owner's self-hosted Huginn instance and
-          the provider that issued the token.
+          involved.
         </p>
+        <p>
+          Providing Huginn's features does require sending some data to services the owner has
+          chosen. Data goes to these services only to carry out the owner's requests:
+        </p>
+        <ul>
+          <li><strong>AI model providers.</strong> Huginn is powered by large language models. When a request involves calendar data, email or memory, the relevant content is sent to the model provider to generate a response. The current provider is Anthropic, through its API. The owner may configure others.</li>
+          <li><strong>GitHub.</strong> Huginn syncs notes from its memory to a private repository owned by the owner. Those notes may include details derived from the data above.</li>
+          <li><strong>Web search providers.</strong> Search queries Huginn makes for the owner go to a search provider, currently Tavily, and could reflect details of a request.</li>
+          <li><strong>Tailscale.</strong> The owner's devices reach Huginn over a private Tailscale network.</li>
+        </ul>
       </section>
 
       <section aria-labelledby="storage">
         <h2 id="storage">Data Storage and Security</h2>
         <p>
-          OAuth tokens and any cached API data are stored locally on the owner's private
-          homelab infrastructure. There is no cloud database, no hosted backend, and no
-          managed service in front of Huginn.
+          OAuth tokens, cached calendar data, conversations and memory are stored on the owner's
+          private homelab infrastructure, in a database run by the owner. Apart from the services
+          listed under Data Sharing and Selling, there is no cloud database or managed service
+          holding this data.
         </p>
         <h3>Security measures</h3>
         <ul>
-          <li>Tokens are kept on hardware physically controlled by the owner.</li>
-          <li>Network access to Huginn is restricted to the owner's private network.</li>
-          <li>Secrets are not committed to source control and are not transmitted to external systems.</li>
+          <li>Stored OAuth refresh tokens and client secrets are encrypted with AES-256-GCM.</li>
+          <li>Temporary access-token files can be read only by the service that uses them.</li>
+          <li>Huginn is reached over the owner's private network and is not offered on a public address.</li>
+          <li>Secrets are not committed to source control.</li>
         </ul>
       </section>
 
       <section aria-labelledby="retention">
         <h2 id="retention">Data Retention and Deletion</h2>
         <p>
-          Tokens are retained only as long as they are useful for the owner's automations and
-          can be revoked at any time through the issuing provider's account settings (for
-          Google data, via
-          <a href="https://myaccount.google.com/permissions" rel="noopener">Google Account
-          permissions</a>). Revoking access immediately invalidates the token on Huginn's
-          side.
+          Tokens are retained only as long as they are useful for the owner's automations and can
+          be revoked at any time through the issuing provider's account settings (for Google data,
+          via <a href="https://myaccount.google.com/permissions" rel="noopener">Google Account
+          permissions</a>). Revoking access stops Huginn from retrieving new data, but does not by
+          itself delete data already stored.
+        </p>
+        <p>
+          Cached data, conversations and memory remain until the owner deletes them. Database
+          backups are kept on the owner's hardware on a rolling schedule of 14 daily, 8 weekly and
+          12 monthly copies, so deleted data can persist in backups for about a year. Data sent to
+          the services listed above is also subject to those services' own retention terms.
         </p>
       </section>
 
       <section aria-labelledby="google">
         <h2 id="google">Use of Google User Data</h2>
         <p>
-          Huginn's use and transfer of information received from Google APIs will adhere to
-          the
+          Huginn's use and transfer of information received from Google APIs will adhere to the
           <a href="https://developers.google.com/terms/api-services-user-data-policy" rel="noopener">Google
-          API Services User Data Policy</a>, including the Limited Use requirements. Data
-          obtained from Google APIs is used only to provide the owner's personal automations
-          and is never transferred to others, used for advertising, or read by humans except
-          as needed for security, debugging, or when the owner explicitly chooses to view it.
+          API Services User Data Policy</a>, including the Limited Use requirements.
+        </p>
+        <p>
+          Data obtained from Google APIs is used only to provide features the owner uses directly.
+          It is transferred only to the services listed above, as needed to provide those features
+          at the owner's direction, or as needed for security or to comply with the law. It is
+          never used for advertising, and Huginn does not use it to develop, improve or train
+          generalized AI or machine learning models. People do not read it except as needed for
+          security, debugging, or when the owner chooses to view it.
         </p>
       </section>
 
       <section aria-labelledby="children">
         <h2 id="children">Children's Privacy</h2>
         <p>
-          Huginn is a single-user personal tool and is not directed to children. No data
-          about children is knowingly collected or processed.
+          Huginn is a single-user personal tool and is not directed to children. Huginn does not
+          knowingly collect data from children, though the owner's calendar or email could mention
+          them.
         </p>
       </section>
 
@@ -227,14 +251,14 @@
         <h2 id="contact">Contact</h2>
         <p>Questions about this policy can be directed to the owner:</p>
         <address class="contact">
-          Alex Van Laningham<br>
+          Alex VanLaningham<br>
           Email: <a href="mailto:ajvanlaningham@gmail.com">ajvanlaningham@gmail.com</a>
         </address>
       </section>
     </main>
 
     <footer class="site-footer">
-      <p>&copy; <time datetime="2026">2026</time> Alex Van Laningham. Huginn is a personal, non-commercial project.</p>
+      <p>&copy; <time datetime="2026">2026</time> Alex VanLaningham. Huginn is a personal, non-commercial project.</p>
     </footer>
   </div>
 </body>
